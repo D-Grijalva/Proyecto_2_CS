@@ -1,2 +1,5 @@
 # Proyecto_2_CS
-Mini proyecto para el parcial 2 de contabilidad de seguros
+
+---
+
+Primer avance del mini-proyecto para el 2do parcial de Contabilidad de Seguros.
