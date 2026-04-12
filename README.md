@@ -86,8 +86,8 @@ Las siguientes tareas o implementaciones deseadas no estan asignadas a nadie. Si
 > - [ ] Definir una estructura basica de los archivos de excel de ingesta.
 > - [ ] Definir estadares para el output del modulo "Lectura, limpieza y validacion de datos" y del modulo "Calculo de razones financieras"
 
-> EXTRA:
-> - [ ] None 
+EXTRA:
+- [ ] None 
 
 ### Diego
 
@@ -102,8 +102,8 @@ Las siguientes tareas o implementaciones deseadas no estan asignadas a nadie. Si
 >     - Algunas partes de tu codigo estaran estrictamente hiladas a la GUI, especialmente si implementamos inputs editables (esta en la lista de tareas extra, pero espero alcanzar a implementarlo). Es por esto que necesitas entender como funciona la GUI y ver que hace cada boton con precision.
 > - [ ] El modulo "Calculo de razones financieras" depende del tuyo. Es por esto que debes analizar los estandares que definimos del tipo de output que esperamos. Asi idealmente no habra errores.
 
-> EXTRA:
-> - 
+EXTRA:
+- 
 
 ### Maria
 
@@ -118,10 +118,18 @@ Las siguientes tareas o implementaciones deseadas no estan asignadas a nadie. Si
 > - [ ] Entender los estadandares definidos para el output esperado del modulo de limpieza, transformacion y validacion de datos. Tu modulo depende de dicho modulo, por tanto para que no haya errores al implementarlos en el script principal lo ideal es que entiendas bien lo que este retorna.
 
 
-> EXTRA:
-> - 
+EXTRA:
+- 
 
 ## Hipervinculos a archivos importantes dentro del proyecto
 
 - [Estructura basica de los archivos de excel de ingesta].()
 - [Estandares de outputs de los distintos modulos].() 
+
+## Tutoriales, articulos, documentacion relevante
+
+- Si no saben usar github y git, yo aprendi lo superbasico usando [esta lista de reproduccion].(https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV). Alternativamente, pueden usar los propios [tutoriales de github].(https://docs.github.com/en/get-started/start-your-journey/hello-world). O solo preguntenle a un LLM.
+- Para que aprendan a usar la funcion de "issues", solo vean [este video].(https://www.youtube.com/watch?v=WMykv2ZMyEQ&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV&index=4)
+- Lo basico de pandas lo pueden encontrar [aqui].(https://pandas.pydata.org/docs/user_guide/index.html)
+- Para que entiendan como funciona la programacion modular vean [este short].(https://www.youtube.com/shorts/Ju6tP03GI7c). Para que vean como se veria un modulo creado por ustedes muy sencillo vean [este video].(https://www.youtube.com/watch?v=cgxEqlGJcrY). Cuando yo he usado modulos siempre defino clases, y funciones dentro de clases; si puueden hagan lo mismo, aunque como se ve en el ultimo video esto no es necesario.
+
