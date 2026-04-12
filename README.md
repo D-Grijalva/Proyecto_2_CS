@@ -84,7 +84,7 @@ Las siguientes tareas o implementaciones deseadas no estan asignadas a nadie. Si
 
 > SUBMAIN:
 > - [ ] Definir una estructura basica de los archivos de excel de ingesta.
-> - [ ] Definir estadares para el output del modulo "Lectura, limpieza y validacion de datos" y del modulo "Calculo de razones financieras"
+> - [x] Definir estadares para el output del modulo "Lectura, limpieza y validacion de datos" y del modulo "Calculo de razones financieras"
 
 EXTRA:
 - [ ] None 
@@ -103,7 +103,7 @@ EXTRA:
 > - [ ] El modulo "Calculo de razones financieras" depende del tuyo. Es por esto que debes analizar los estandares que definimos del tipo de output que esperamos. Asi idealmente no habra errores.
 
 EXTRA:
-- 
+- [ ] None
 
 ### Maria
 
@@ -117,14 +117,13 @@ EXTRA:
 > SUBMAIN:
 > - [ ] Entender los estadandares definidos para el output esperado del modulo de limpieza, transformacion y validacion de datos. Tu modulo depende de dicho modulo, por tanto para que no haya errores al implementarlos en el script principal lo ideal es que entiendas bien lo que este retorna.
 
-
 EXTRA:
-- 
+- [ ] None
 
 ## Hipervinculos a archivos importantes dentro del proyecto
 
-- [Formato basico de los archivos .csv de ingesta]()
-- [Estructura de los inputs y ouputs de los modulos]() 
+- [Formato basico de los archivos .csv de ingesta](SCRIPTS/Libreta_formato_csv_ingests.ipynb)
+- [Estructura de los inputs y ouputs de los modulos](SCRIPTS/Estructura_inputs_outputs_modulos.ipynb) 
 
 ## Tutoriales, articulos, documentacion relevante
 
