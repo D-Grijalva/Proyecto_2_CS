@@ -8,6 +8,8 @@ NOTA - Por el momento, la organizacion del proyecto la llevaremos a cabo en este
 
 ### Alcances del proyecto
 
+Para ver mas info, vean la [rubrica](ATTACHMENTS//_pdf/Rúbrica%20para%20examen%202%20Conta%20de%20seguros.pdf)
+
 - Creacion de un modulo de entrada, procesamiento y validacion de informacion.
 - Analisis financiero de las siguientes razones financieras:
     - Liquidez
@@ -69,6 +71,8 @@ Las siguientes tareas o implementaciones deseadas no estan asignadas a nadie. Si
 - Agregar funcionalidad en la GUI para inputs editables
 - Agregar funcionalidad para escenarios what if?
 - Agregar interpretacion automatica de razones financieras
+- Agregar opcion para que el ususario pueda seleccionar el estandar de las cifras (en miles, cientos de miles, millones de pesos), y que esto se vea reflejado en las graficas desarrolladas y los analisis realizados.
+
 
 
 ### Ossian
