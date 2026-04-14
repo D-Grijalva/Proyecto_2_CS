@@ -43,7 +43,8 @@ Para ver mas info, vean la [rubrica](ATTACHMENTS//_pdf/Rúbrica%20para%20examen%
 ### Entregables
 
 - Scripts de python
-    - Script principal: GUI
+    - Script principal: [main.py](/SCRIPTS/main.py)
+    - Modulo: Generacion de la GUI - [gui.py](/SCRIPTS/gui.py)
     - Modulo: Lectura, limpieza y validacion de datos.
     - Modulo: Calculo de razones financieras.
     - Modulo: Generacion del dashboard.
@@ -79,15 +80,17 @@ Las siguientes tareas o implementaciones deseadas no estan asignadas a nadie. Si
 
 
 > MAIN: Script GUI y modulo "Generacion del dashboard"
-> - [ ] Planificar GUI completa.
-> - [ ] Desarrollar GUI - no funcional.
-> - [ ] Implementar funcionalidad a la GUI.
+> - [x] Planificar GUI completa.
+> - [x] Desarrollar GUI funcional semi-completa.
+> - [ ] Desarrollar libreta documentacion de GUI.
+> - [ ] Desarrollar GUI funcional completa 
 > - [ ] Planificar Dashboard completo.
-> - [ ] Seleccionar plataforma/herramienta para hacer el dashboard.
+> - [x] Seleccionar plataforma/herramienta para hacer el dashboard.
+> - [ ] Planificar que graficas y analisis realizar en el dashboard.
 > - [ ] Desarrollar Dashboard.
 
 > SUBMAIN:
-> - [ ] Definir una estructura basica de los archivos de excel de ingesta.
+> - [x] Definir una estructura basica de los archivos de excel de ingesta.
 > - [x] Definir estadares para el output del modulo "Lectura, limpieza y validacion de datos" y del modulo "Calculo de razones financieras"
 
 EXTRA:
