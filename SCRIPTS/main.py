@@ -15,11 +15,10 @@ test_results = {
     "ROA": 0.15,
 }
 
-if __name__ == "__main__":
-    app = ProgramaGui(results_dict=test_results)
-    app.start_window()
-    
-    # After app closes, you can access the paths:
-    bg_path, er_path = app.get_paths()
-    print(f"Balance General path: {bg_path}")
-    print(f"Estado de Resultados path: {er_path}")
+app = ProgramaGui(results_dict=test_results)
+app.start_window()
+
+# After app closes, you can access the paths:
+bg_path, er_path = app.get_paths()
+print(f"Balance General path: {bg_path}")
+print(f"Estado de Resultados path: {er_path}")
