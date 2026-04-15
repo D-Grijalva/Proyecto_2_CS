@@ -32,9 +32,8 @@ def csv_validation(bg_path: str, er_path: str) -> Dict:
 
 # Esta funcion es para hacer los analisis automaticos de las razones financieras
 def auto_analysis(results_dict: dict) -> Dict:
-    return {"Raw results": "Raw results",
-            "Razones de solvencia": "Tal y cual razon de solvencia esta muy alta\nTal y cual muy baja\nTal y cual en valores sanos para una aseguradora",
-            "Razones de Liquidez":"Nada que comentar\nDe nuevo nada que comentar"}
+    return {"Razones de solvencia": "Tal y cual razon de solvencia esta muy alta\nTal y cual muy baja\nTal y cual en valores sanos para una aseguradora",
+            "Razones de liquidez":"Nada que comentar\nDe nuevo nada que comentar"}
 
 # Clases
 class PathAndResults:
@@ -71,6 +70,7 @@ class ProgramaGui:
 
     def __init__(self, results_dict: Optional[Dict] = None, csv_validation_results_dict: Optional[Dict] = None):
         self.state = PathAndResults()    # El atributo .state de la clase ProgramGui es una instancia de la clase PathAndResults
+        self.results_text: Optional[tk.StringVar] = None
         if results_dict:
             self.state.set_results(results_dict)
         if csv_validation_results_dict:
@@ -119,6 +119,17 @@ class ProgramaGui:
             return "No hay datos disponibles"
         return "\n".join(f"{key}: {value}" for key, value in data.items())
     
+    def update_results_display(self, chosen_analysis: tk.StringVar) -> None:
+        """Funcion para actualizar el texto de resultados cuando el tipo de analisis cambie"""
+        selected = chosen_analysis.get()
+
+        if selected == "Selecciona tipo de analisis":
+            self.results_text.set("")
+        elif selected == "Raw results":
+            self.results_text.set(self._dict_to_string(self.state.results))
+        else:
+            self.results_text.set(auto_analysis(self.state.results)[selected])
+
     def start_window(self) -> None:
         """Ventana INICIAL - Donde el usuario ingresa los archivos .csv de los estados financieros"""
         try:
@@ -162,6 +173,7 @@ class ProgramaGui:
                     return None
 
             self._create_window()
+            self.results_text = tk.StringVar()
             
             # Definicion de widgest de la ventana
 
@@ -169,13 +181,12 @@ class ProgramaGui:
             analysis_options = ["Raw results", "Razones de solvencia", "Razones de liquidez"]
             chosen_analysis = tk.StringVar()
             chosen_analysis.set("Selecciona tipo de analisis")
-            analysis_menu = tk.OptionMenu(self.root, chosen_analysis, *analysis_options, command=None)
+            analysis_menu = tk.OptionMenu(self.root, chosen_analysis, *analysis_options, command=lambda _: self.update_results_display(chosen_analysis))
             analysis_menu.config(font=FONT_BODY)
 
             # Texto
             title_label = tk.Label(self.root, text="Resultado del calculo de las razones financieras", font=FONT_TITLE  )
-            results_text = self._dict_to_string(self.state.results)
-            results_label = tk.Label(self.root, text=results_text, font=FONT_BODY, justify="left")
+            results_label = tk.Label(self.root, textvariable=self.results_text, font=FONT_BODY, justify="left")
 
             # Botones
             back_button = tk.Button(self.root, text="Regresar", command=self.start_window, font=FONT_BODY)

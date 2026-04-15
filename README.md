@@ -1,4 +1,4 @@
-# Parcial 222 - Sistema de análisis financiero para las aseguradoras
+# Parcial 2 - Sistema de análisis financiero para las aseguradoras
 
 ---
 
@@ -94,7 +94,7 @@ Las siguientes tareas o implementaciones deseadas no estan asignadas a nadie. Si
 > - [x] Definir estadares para el output del modulo "Lectura, limpieza y validacion de datos" y del modulo "Calculo de razones financieras"
 
 EXTRA:
-- [ ] None 
+- [x] GUI - Funcionalidad agregada para la visualizacion de la interpretaion automatica de razones finanieras
 
 ### Diego
 
