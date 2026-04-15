@@ -24,15 +24,21 @@ FONT_BODY = ("Century Gothic", 10)
 # 4. Plantear GIU para ingesta de datos
 # 5. Agregar ventana de arhivos incorrectos, con mesaje de que es lo que tienen incorrecto
 #        - Por el momento, solo mensajes de archivo incorrecto y no permitir avanzar de ventana
+# 6. Cambiar ventana incial a ventana de ingesta y definir una nueva ventana presentacion con hipervnculo al manual de usuario
 
 # Funciones temporales - repreesntan funciones que se importaran de otros modulos no hechos
 
 # Esta funcion es para probar la implementacion de la validacion en la GUI
 def csv_validation(bg_path: str, er_path: str) -> Dict:
-    return {"BG": (False, "El balance general no respeta la ecuacion contable A=P+C\nEl balance general no respeta regla 1\nEl balance general no respeta regla 2\n"), "ER": (True, "")}
+    return {"BG": (True, "El balance general no respeta la ecuacion contable A=P+C\nEl balance general no respeta regla 1\nEl balance general no respeta regla 2\n"), "ER": (True, "")}
+
+# Esta funcion es para hacer los analisis automaticos de las razones financieras
+def auto_analysis(results_dict: dict) -> Dict:
+    return {"Raw results": "Raw results",
+            "Razones de solvencia": "Tal y cual razon de solvencia esta muy alta\nTal y cual muy baja\nTal y cual en valores sanos para una aseguradora",
+            "Razones de Liquidez":"Nada que comentar\nDe nuevo nada que comentar"}
 
 # Clases
-
 class PathAndResults:
     """Definir esta clase sustituye el uso de variables globales para los path y el diccionario de resultados"""
     def __init__(self):
@@ -49,13 +55,17 @@ class PathAndResults:
     def set_results(self, results: Dict) -> None:
         self.results = results
 
-# Hice cambios en las siguientes funciones:
+# Para la implementacion de validacion en la GUI hice cambios en las siguientes funciones:
 # csv_validation: Funcion temporal. Esta funcion se importara del modulo de lectura,limpieza y validacion.
 # - start_window : Cambie el comando que llama el boton siguiente; sigue siendo results_window, pero ahora con un argumento extra, por tanto ahora es una lambda function (el argumento es la funcion temporal csv_validation)
 # - dashboard_window : Mismo cambio que en start_window
 # - results_window: Cambios sustanciales
 #       - Agregue un argumento con type hint dict asociado al diccionario de resultados de la validacion de los csv
 #       - Agregue un condicional para mandar mensaje si no se paso la validacion, y continuar el programa si se paso con exito
+
+# Para la implementacion de impresion de resultados automaticos en la GUI hice los siguientes cambios:
+# auto_analysis: Funcion temporal. Esta funcion se importara del modulo de calculo de razones financieras.
+# - results_window: Cambios sustanciales
 
 class ProgramaGui:
     """Clase principal de la GUI del programa"""
@@ -144,7 +154,7 @@ class ProgramaGui:
             
             if csv_validation_results:
                 error_dict = {}
-                for key, value in csv_validation_results.items():
+                for key, value in csv_validation_results.items():    # Esto se puede hacer con list comprehension
                     if value[0] == False:   # No paso la validacion
                         error_dict[key]=value[1]
                 
@@ -155,6 +165,17 @@ class ProgramaGui:
             self._create_window()
             
             # Definicion de widgest de la ventana
+
+            # ADICION PARA LA IMPLEMENTACION DE IMPRESION DE RESULTADOS DEL AUTO ANALISIS
+
+            analysis_options = ["Raw results", "Razones de solvencia", "Razones de liquidez"]
+            chosen_analysis = tk.StringVar()
+            chosen_analysis.set("Selecciona tipo de analisis")
+            analysis_menu = tk.OptionMenu(self.root, chosen_analysis, *analysis_options, command=None)
+            analysis_menu.config(font=FONT_BODY)
+
+            # ________________________________________________________________________________
+
 
             # Texto
             title_label = tk.Label(self.root, text="Resultado del calculo de las razones financieras", font=FONT_TITLE  )
@@ -167,9 +188,10 @@ class ProgramaGui:
 
             # Posicionamiento de widgets
             title_label.grid(row=0, column=0, columnspan=4, padx=20, pady=20)
-            results_label.grid(row=1, column=0, columnspan=4, padx=50, pady=50)
-            back_button.grid(row=2, column=0, padx=15, pady=10)
-            next_button.grid(row=2, column=3, padx=15, pady=10)
+            results_label.grid(row=2, column=0, columnspan=4, padx=50, pady=50)
+            analysis_menu.grid(row=1, column=2, padx=20, pady=20)
+            back_button.grid(row=3, column=0, padx=15, pady=10)
+            next_button.grid(row=3, column=3, padx=15, pady=10)
 
             self.root.mainloop()
         except Exception as e:
