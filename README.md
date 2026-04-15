@@ -139,3 +139,10 @@ EXTRA:
 - Lo basico de pandas lo pueden encontrar [aqui](https://pandas.pydata.org/docs/user_guide/index.html)
 - Para que entiendan como funciona la programacion modular vean [este short](https://www.youtube.com/shorts/Ju6tP03GI7c). Para que vean como se veria un modulo creado por ustedes muy sencillo vean [este video](https://www.youtube.com/watch?v=cgxEqlGJcrY). Cuando yo he usado modulos siempre defino clases, y funciones dentro de clases; si puueden hagan lo mismo, aunque como se ve en el ultimo video esto no es necesario.
 
+## Comentarios del profe
+
+- Guardar avances en un pdf?
+- Inputs manuales
+    - seleccion de razones
+    - ingreso de valores de cuentas
+- Objetivo? Util con que proposito? - 
