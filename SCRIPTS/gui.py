@@ -1,12 +1,7 @@
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
 from tkinter import messagebox
-import logging
 from typing import Optional, Dict, Callable
-
-# Configuramos logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 # Constantes
 FONT_TITLE = ("Century Gothic", 12, "bold")
@@ -15,16 +10,10 @@ FONT_BODY = ("Century Gothic", 10)
 # Pendientes
 # 1. Remplazar el uso de Optional, por simplemente usar el simbolo de disyuncion "|"
 # 2. En ventana inicial: Agregar un cuadro de texto que muestre el nombre del .csv seleccionado
-# 3. En ventana de resultados: Agregar un menu de opciones para seleccionar tipo de analisis
-#        - Simple impresion de valores de razones
-#        - Razon 1: Analisis automatico
-#        - ... Razon 6: Analisis automatico
 # 4. Plantear GIU para ingesta de datos
-# 5. Agregar ventana de arhivos incorrectos, con mesaje de que es lo que tienen incorrecto
-#        - Por el momento, solo mensajes de archivo incorrecto y no permitir avanzar de ventana
 # 6. Cambiar ventana incial a ventana de ingesta y definir una nueva ventana presentacion con hipervnculo al manual de usuario
 
-# Funciones temporales - repreesntan funciones que se importaran de otros modulos no hechos
+# Funciones temporales - representan funciones que se importaran de otros modulos no hechos
 
 # Esta funcion es para probar la implementacion de la validacion en la GUI
 def csv_validation(bg_path: str, er_path: str) -> Dict:
@@ -62,8 +51,11 @@ class PathAndResults:
 
 # Para la implementacion de impresion de resultados automaticos en la GUI hice los siguientes cambios:
 # auto_analysis: Funcion temporal. Esta funcion se importara del modulo de calculo de razones financieras.
+# - agregue un atributo a la clase ProgramaGUI (results_text). Esto para solucionar problemas con la actualizacion del label de results_text en la ventana de resultados
+# - agregue la funcion update_results_display para actualizar el texto que se ve en una label
 # - results_window: Cambios sustanciales en la funcion
-#       - 
+#       - agrege una seccion sustancial asociado al OptionMenu
+#       - defini el texto del label results_text como un StringVar para que se actualice tan pronto cambie el valor
 
 class ProgramaGui:
     """Clase principal de la GUI del programa"""
@@ -86,7 +78,6 @@ class ProgramaGui:
 
     def _show_error(self, message: str) -> None:
         """Muestra mensaje de error al usuario"""
-        logger.error(message)    # No se que hace esto, lo saque de internet
         messagebox.showerror("Error", message)
     
     def _show_info(self, title: str, message: str) -> None:
@@ -154,14 +145,12 @@ class ProgramaGui:
             self.root.mainloop()
         except Exception as e:
             self._show_error(f"Error en la ventana inicial: {str(e)}")
-            logger.exception("Excepcion en la ventana de ingesta de csv")
 
     def results_window(self, csv_validation_results: Dict) -> None:
         """Visualizacion de resultados"""
         try:
 
             # Antes de crear una nueva ventana y cerrar la actual, se tienen que analizar los resultados de la validacion de los csv
-            
             if csv_validation_results:
                 error_dict = {}
                 for key, value in csv_validation_results.items():    # Esto se puede hacer con list comprehension
@@ -202,7 +191,6 @@ class ProgramaGui:
             self.root.mainloop()
         except Exception as e:
             self._show_error(f"Error en la ventana de resultados: {str(e)}")
-            logger.exception("Excepcion en la ventana de resultados")
 
     def dashboard_window(self) -> None:
         """Ventana temporal - Representa la ventana del dashboard (no implementado aun)"""
@@ -218,7 +206,6 @@ class ProgramaGui:
             self.root.mainloop()
         except Exception as e:
             self._show_error(f"Error en la ventana del dashboard: {str(e)}")
-            logger.exception("Error en la ventana del dashboard")
 
     def get_paths(self) -> tuple:
         """Get file paths for processing by other modules"""

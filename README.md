@@ -66,13 +66,12 @@ La tercera seccion "EXTRA" se explica a detalle a continuacion:
 
 Las siguientes tareas o implementaciones deseadas no estan asignadas a nadie. Si alguien termina su parte y le sobra tiempo, pueden escoger alguna a discrecion y empezar a resolverla. Si hacen eso, borren de esta seccion dicha tarea y muevanla a su seccion de "EXTRA".
 
-- Agregar funcionalidad para extraer datos de un pdf
-- Agregar funcionalidad para inputs editables
-- Extender dinamismo del formato excel de entrada. Esto es, hacer las implementaciones necesarias al codigo para que formatos mas laxos del script de entrada se puedan leer correctamente.
-- Agregar funcionalidad en la GUI para inputs editables
-- Agregar funcionalidad para escenarios what if?
-- Agregar interpretacion automatica de razones financieras
-- Agregar opcion para que el ususario pueda seleccionar el estandar de las cifras (en miles, cientos de miles, millones de pesos), y que esto se vea reflejado en las graficas desarrolladas y los analisis realizados.
+- Agregar funcionalidad para extraer datos de un pdf - GUI - LECTURA,LIMPIEZA,VALIDACION
+- Agregar funcionalidad para inputs editables - GUI - LECTURA,LIMPIEZA,VALIDACION
+- Extender dinamismo del formato excel de entrada. Esto es, hacer las implementaciones necesarias al codigo para que formatos mas laxos del script de entrada se puedan leer correctamente. - LECTURA,LIMPIEZA,VALIDACION
+- Agregar funcionalidad para escenarios what if? - GUI - LECTURA,LIMPIEZA,VALIDACION
+- Agregar interpretacion automatica de razones financieras - GUI - CALCULO DE RAZONES
+- Agregar opcion para que el ususario pueda seleccionar el estandar de las cifras (en miles, cientos de miles, millones de pesos), y que esto se vea reflejado en las graficas desarrolladas y los analisis realizados. 
 
 
 
@@ -80,7 +79,7 @@ Las siguientes tareas o implementaciones deseadas no estan asignadas a nadie. Si
 
 
 > MAIN: Script GUI y modulo "Generacion del dashboard"
-> - [x] Planificar GUI completa.
+> - [ ] Planificar GUI completa.
 > - [x] Desarrollar GUI funcional semi-completa.
 > - [ ] Desarrollar libreta documentacion de GUI.
 > - [ ] Desarrollar GUI funcional completa 
@@ -91,17 +90,18 @@ Las siguientes tareas o implementaciones deseadas no estan asignadas a nadie. Si
 
 > SUBMAIN:
 > - [x] Definir una estructura basica de los archivos de excel de ingesta.
-> - [x] Definir estadares para el output del modulo "Lectura, limpieza y validacion de datos" y del modulo "Calculo de razones financieras"
+> - [x] Definir estadares para el output del modulo "Lectura, limpieza y validacion de datos" y del modulo "Calculo de razones financieras".
 
 EXTRA:
-- [x] GUI - Funcionalidad agregada para la visualizacion de la interpretaion automatica de razones finanieras
+- [x] GUI - Funcionalidad agregada para la visualizacion de la interpretaion automatica de razones finanieras.
+- [ ] GUI - Funcionalidad agregada para la impresion de interpretacion de resultados automatica.
 
 ### Diego
 
 > MAIN: Modulo "Lectura, limpieza y validacion de datos"
 > - [ ] En base a la estructura basica de los archivos de excel de ingesta, desarrollar funciones para la lectura y la limpieza de los datos.
 > - [ ] Determinar validaciones a realizar y desarrollar funciones que las implementen.
-> - [ ] Documentar el proceso de lectura, limpieza y validacion de datos en una libreta de ipython
+> - [ ] Documentar el proceso de lectura, limpieza y validacion de datos en una libreta de ipython.
 >     - Tienes que desarrollar un script .py limpio, la libreta es solo para que podamos ver como es que desarrollaste las funciones. Si vibe-codeaste algo, pidele al LLM que de  una breve explicacion del codigo para que podamos seguir el hilo.
 
 > SUBMAIN:
@@ -125,7 +125,7 @@ EXTRA:
 > - [ ] Entender los estadandares definidos para el output esperado del modulo de limpieza, transformacion y validacion de datos. Tu modulo depende de dicho modulo, por tanto para que no haya errores al implementarlos en el script principal lo ideal es que entiendas bien lo que este retorna.
 
 EXTRA:
-- [ ] None
+- [ ] Calculo de razones financieras - Agregar implementacion para interpretacion autoamtica de razones financieras.
 
 ## Hipervinculos a archivos importantes dentro del proyecto
 
@@ -138,11 +138,3 @@ EXTRA:
 - Para que aprendan a usar la funcion de "issues", solo vean [este video](https://www.youtube.com/watch?v=WMykv2ZMyEQ&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV&index=4)
 - Lo basico de pandas lo pueden encontrar [aqui](https://pandas.pydata.org/docs/user_guide/index.html)
 - Para que entiendan como funciona la programacion modular vean [este short](https://www.youtube.com/shorts/Ju6tP03GI7c). Para que vean como se veria un modulo creado por ustedes muy sencillo vean [este video](https://www.youtube.com/watch?v=cgxEqlGJcrY). Cuando yo he usado modulos siempre defino clases, y funciones dentro de clases; si puueden hagan lo mismo, aunque como se ve en el ultimo video esto no es necesario.
-
-## Comentarios del profe
-
-- Guardar avances en un pdf?
-- Inputs manuales
-    - seleccion de razones
-    - ingreso de valores de cuentas
-- Objetivo? Util con que proposito? - 
