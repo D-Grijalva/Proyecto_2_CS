@@ -166,16 +166,12 @@ class ProgramaGui:
             
             # Definicion de widgest de la ventana
 
-            # ADICION PARA LA IMPLEMENTACION DE IMPRESION DE RESULTADOS DEL AUTO ANALISIS
-
+            # Menu de opciones
             analysis_options = ["Raw results", "Razones de solvencia", "Razones de liquidez"]
             chosen_analysis = tk.StringVar()
             chosen_analysis.set("Selecciona tipo de analisis")
             analysis_menu = tk.OptionMenu(self.root, chosen_analysis, *analysis_options, command=None)
             analysis_menu.config(font=FONT_BODY)
-
-            # ________________________________________________________________________________
-
 
             # Texto
             title_label = tk.Label(self.root, text="Resultado del calculo de las razones financieras", font=FONT_TITLE  )
