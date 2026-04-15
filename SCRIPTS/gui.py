@@ -12,9 +12,7 @@ logger = logging.getLogger(__name__)
 FONT_TITLE = ("Century Gothic", 12, "bold")
 FONT_BODY = ("Century Gothic", 10)
 
-
 # Pendientes
-
 # 1. Remplazar el uso de Optional, por simplemente usar el simbolo de disyuncion "|"
 # 2. En ventana inicial: Agregar un cuadro de texto que muestre el nombre del .csv seleccionado
 # 3. En ventana de resultados: Agregar un menu de opciones para seleccionar tipo de analisis
@@ -65,7 +63,8 @@ class PathAndResults:
 
 # Para la implementacion de impresion de resultados automaticos en la GUI hice los siguientes cambios:
 # auto_analysis: Funcion temporal. Esta funcion se importara del modulo de calculo de razones financieras.
-# - results_window: Cambios sustanciales
+# - results_window: Cambios sustanciales en la funcion
+#       - 
 
 class ProgramaGui:
     """Clase principal de la GUI del programa"""
